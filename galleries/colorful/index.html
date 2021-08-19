@@ -6,7 +6,7 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>归档 - 阿黎的空间: 2021/8</title>
+  <title>colorful - 阿黎的空间</title>
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="google" content="notranslate" />
@@ -145,7 +145,7 @@
       
       
     </div>
-    <div class="center">归档</div>
+    <div class="center">colorful</div>
     <div class="right">
       <i class="iconfont iconmenu j-navbar-menu"></i>
     </div>
@@ -180,43 +180,87 @@
     
   </div>
 </nav>
-  <main id="main">
-  <section class="archive">
-    <div class="archive-container">
-      <div class="archive-post">
-        <h3 class="archive-total">归档: 4 篇</h3>
-        
-        
-          
-            <h3 class="archive-year">2021 年</h3>
-          
-          <div class="archive-item">
-            <a class="archive-date" href="/2021/08/19/complaint/">八月 19</a>
-            <a class="archive-title" href="/2021/08/19/complaint/"></a>
-          </div>
-        
-          
-          <div class="archive-item">
-            <a class="archive-date" href="/2021/08/19/Diary/">八月 19</a>
-            <a class="archive-title" href="/2021/08/19/Diary/"></a>
-          </div>
-        
-          
-          <div class="archive-item">
-            <a class="archive-date" href="/2021/08/19/politics/">八月 19</a>
-            <a class="archive-title" href="/2021/08/19/politics/">阿美与越南:罕见们为何而Run</a>
-          </div>
-        
-          
-          <div class="archive-item">
-            <a class="archive-date" href="/2021/08/10/readme/">八月 10</a>
-            <a class="archive-title" href="/2021/08/10/readme/">欢迎光临,往这看！</a>
-          </div>
-        
-      </div>
+  
+
+
+<main id="main">
+  <section class="gallery container">
+    <header class="header">
+  <h1 class="header-title">colorful</h1>
+  <p class="header-subtitle">君未看花时，花与君同寂；君来看花日，花色一时明。</p>
+</header>
+    <div id="wrap" class=waterfallWrap default-type="waterfall" default-col="3">
+      <a data-fancybox="images" style=width:33.333333333333336% href="/images/theme/post-image.jpg" class="item"><img   class="lazyload" data-original="/images/theme/post-image.jpg" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="  alt="/images/theme/post-image.jpg" /></a><a data-fancybox="images" style=width:33.333333333333336% href="/images/theme/post-image.jpg" class="item"><img   class="lazyload" data-original="/images/theme/post-image.jpg" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="  alt="/images/theme/post-image.jpg" /></a><a data-fancybox="images" style=width:33.333333333333336% href="/images/theme/post-image.jpg" class="item"><img   class="lazyload" data-original="/images/theme/post-image.jpg" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="  alt="/images/theme/post-image.jpg" /></a><a data-fancybox="images" style=width:33.333333333333336% href="/images/theme/post-image.jpg" class="item"><img   class="lazyload" data-original="/images/theme/post-image.jpg" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="  alt="/images/theme/post-image.jpg" /></a><a data-fancybox="images" style=width:33.333333333333336% href="/images/theme/post-image.jpg" class="item"><img   class="lazyload" data-original="/images/theme/post-image.jpg" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="  alt="/images/theme/post-image.jpg" /></a>
     </div>
   </section>
 </main>
+
+<script>
+  var gap = 10;
+  var items = document.getElementsByClassName('item');
+  var wrap = document.getElementById("wrap");
+
+  window.onload = function () {
+    waterFall();
+  }
+
+  window.onresize = function () {
+    setTimeout(() => {
+      waterFall();
+    }, 1000)
+  }
+
+  function waterFall() {
+    if (!(wrap.getAttribute('default-type') === 'waterfall')) return;
+    var wrapWidth = getClientWidth();
+    var columns;
+    if(wrapWidth < 768 && wrapWidth >= 576) {
+      columns = 2;
+    } else if (wrapWidth < 576) {
+      columns = 1;
+    } else {
+      columns = parseInt(wrap.getAttribute('default-col'));
+    }
+    rerenderImage(columns, wrapWidth);
+  }
+
+  function rerenderImage(col, pageWidth) {
+    var arr = [];
+    var maxHeight = 0;
+    const itemWidth = (100 / col) + '%';
+    for (var i = 0;i < items.length; i++){
+      if (i < col) {
+        items[i].style.top = 0;
+        items[i].style.left = (pageWidth / col  + gap) * i + 'px';
+        items[i].style.width = itemWidth;
+        arr.push(items[i].offsetHeight);
+      } else {
+        var minHeight = arr[0];
+        var index = 0;
+        for (var j = 0; j < arr.length; j++) {
+          if (minHeight > arr[j]) {
+            minHeight = arr[j];
+            index = j;
+          } 
+        }
+        items[i].style.top = arr[index] + gap + 'px';
+        items[i].style.left = items[index].offsetLeft + 'px';
+        items[i].style.width = itemWidth;
+        arr[index] = arr[index] + items[i].offsetHeight + gap;
+      }
+    }
+    for (var m = 0; m < arr.length; m++) {
+      if (maxHeight < arr[m]) {
+        maxHeight = arr[m];
+      } 
+    }
+    wrap.style.height = maxHeight + 'px';
+  }
+
+  function getClientWidth() {
+    return wrap.getBoundingClientRect().width;
+  }
+</script>
   
 
 <footer class="footer">
