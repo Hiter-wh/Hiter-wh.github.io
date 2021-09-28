@@ -16,7 +16,7 @@ const ap = new APlayer({
       {
         name: "红色高跟鞋",
         artist: '我亲爱的乐',
-        url: 'https://drive.google.com/uc?export=download&id=1nVEwardGHRjr7ZBQkd1LxBfIov1ZLU6M',
+        url: 'music/1.mp3',
         cover: '/images/002.jpg',
         //lrc: '/music/lyrics/兩隻老虎.lrc',
       },
