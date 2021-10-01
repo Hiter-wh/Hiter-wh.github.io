@@ -238,10 +238,6 @@
       <div class="post-info">
         <span class="post-info-item"><i class="iconfont iconcalendar"></i>九月 28, 2021</span>
         
-          <span class="post-info-item">
-            <i class="iconfont iconeye"></i><span id="/2021/09/28/politics/" class="leancloud" data-flag-title="阿美与越南:罕见们为何而Run_1"></span>
-          </span>
-        
         <span class="post-info-item"><i class="iconfont iconfont-size"></i>4437</span>
       </div>
     </div>
@@ -272,10 +268,6 @@
       <div class="post-info">
         <span class="post-info-item"><i class="iconfont iconcalendar"></i>九月 27, 2021</span>
         
-          <span class="post-info-item">
-            <i class="iconfont iconeye"></i><span id="/2021/09/27/Diary/" class="leancloud" data-flag-title="浮生日记"></span>
-          </span>
-        
         <span class="post-info-item"><i class="iconfont iconfont-size"></i>2597</span>
       </div>
     </div>
@@ -303,10 +295,6 @@
       <div class="post-info">
         <span class="post-info-item"><i class="iconfont iconcalendar"></i>八月 19, 2021</span>
         
-          <span class="post-info-item">
-            <i class="iconfont iconeye"></i><span id="/2021/08/19/complaint/" class="leancloud" data-flag-title="我是科研民工，我是韭菜大葱"></span>
-          </span>
-        
         <span class="post-info-item"><i class="iconfont iconfont-size"></i>39</span>
       </div>
     </div>
@@ -333,10 +321,6 @@
       </div>
       <div class="post-info">
         <span class="post-info-item"><i class="iconfont iconcalendar"></i>八月 10, 2021</span>
-        
-          <span class="post-info-item">
-            <i class="iconfont iconeye"></i><span id="/2021/08/10/readme/" class="leancloud" data-flag-title="欢迎光临,往这看！"></span>
-          </span>
         
         <span class="post-info-item"><i class="iconfont iconfont-size"></i>905</span>
       </div>
@@ -452,43 +436,6 @@
 <script src="/js/script.js"></script>
 
 
-
-  <script>
-  $.getScript("//cdn.jsdelivr.net/npm/leancloud-storage@4.1.0/dist/av-min.js", () => {
-
-    AV.init({
-      appId: '',
-      appKey: '',
-      serverURLs: 'https://leancloud.cn/',
-    });
-
-    const showCount = (Counter) => {
-      const asyncLimit = new AsyncLimit(2);
-      $(".leancloud").each(async (e) => {
-        const url = $(".leancloud").eq(e).attr('id').trim();
-        const query = new AV.Query("Counter");
-        query.equalTo("words", url);
-        let count = await asyncLimit.run(() => query.count());
-        $(".leancloud").eq(e).text(count ? count : '--');
-      });
-    }
-
-    const addCount = (Counter) => {
-      const url = $(".leancloud").length === 1 ? $(".leancloud").attr('id').trim() : 'http://example.com';
-      var query = new Counter;
-      query.save({
-        words: url
-      });
-    }
-
-    $(function () {
-      const Counter = AV.Object.extend("Counter");
-      addCount(Counter);
-      showCount(Counter);
-    });
-
-  });
-</script>
 
 
 
