@@ -15,5 +15,12 @@ const ap = new APlayer({
       url: 'http://www.ytmp3.cn/down/59211.mp3',
       cover: 'http://p1.music.126.net/W_5XiCv3rGS1-J7EXpHSCQ==/18885211718782327.jpg?param=130y130',
     }
+
+    {
+      name: "红色高跟鞋",
+      artist: 'Carol',
+      url: 'https://link.jscdn.cn/1drv/aHR0cHM6Ly8xZHJ2Lm1zL3UvcyFBZ05EOGY0cHhjSXZpQjVxQUR3RWtkOFVQV2pVP2U9cjhDMnZB.mp3',
+    //  cover: 'http://p1.music.126.net/W_5XiCv3rGS1-J7EXpHSCQ==/18885211718782327.jpg?param=130y130',
+    }
   ]
 });
